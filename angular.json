@@ -146,6 +146,46 @@
           }
         }
       }
+    },
+    "primeng-next": {
+      "projectType": "library",
+      "root": "libs/primeng-next",
+      "sourceRoot": "libs/primeng-next/src",
+      "prefix": "rs-ng-lib",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "project": "libs/primeng-next/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/primeng-next/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/primeng-next/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/primeng-next"],
+          "options": {
+            "jestConfig": "libs/primeng-next/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/primeng-next/src/**/*.ts",
+              "libs/primeng-next/src/**/*.html"
+            ]
+          }
+        }
+      }
     }
   }
 }
