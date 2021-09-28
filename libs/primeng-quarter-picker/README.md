@@ -1,9 +1,16 @@
 # PrimeNG Quarter Picker
 
-A  quarter picker form control.
+A  quarter picker form control for PrimeNG.
 It can be used in an Angular form for supplying range of quarters or quarter.
 
-## Input properties
+# Requisite
+- Angular 12
+- PrimeNG 12
+- PrimeFlex 3
+- Moment
+
+
+# Input properties
 ## minDate
     Date limit for the quarters displayed under 'From' when selection mode is 'range'
 
@@ -13,3 +20,8 @@ It can be used in an Angular form for supplying range of quarters or quarter.
 ## selectionMode
     single|multiple|range
 
+# Support
+Please raise an issue.
+
+# Contribute
+Please follow the convention and create PR.
