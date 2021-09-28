@@ -1,53 +1,54 @@
-<div [ngClass]="{'card': selectionMode === 'range'}">
-    <div class="fluid formgrid grid">
-        <div class="field col">
-            <label *ngIf="selectionMode === 'range'">From</label>
-            <p-dropdown #fromQrterEle
-                        [options]="fromQtrs" [(ngModel)]="selectedFromQuarter"
-                        optionLabel="label"
-                        (onChange)="onFromQuarterChange($event)">
-                <ng-template pTemplate="header">
-                    <div class="flex justify-content-center">
-                        <p-dropdown class="year-dropdown-cont" [options]="fromYears" [(ngModel)]="selectedFromYear"
-                                    [appendTo]="fromQrterEle"
-                                    [placeholder]="'From Year'"
-                                    (onChange)="onFromYearChange($event)"></p-dropdown>
-                    </div>
+<div class="formgrid grid">
+    <div class="field col">
+        <label *ngIf="selectionMode === 'range'" for="from_quarter" class="from-qrtr-lbl">From</label>
+        <p-dropdown #fromQrterEle
+                    id="from_quarter"
+                    [options]="fromQtrs" [(ngModel)]="selectedFromQuarter"
+                    optionLabel="label"
+                    (onChange)="onFromQuarterChange($event)">
+            <ng-template pTemplate="header">
+                <div class="flex justify-content-center">
+                    <p-dropdown class="year-dropdown-cont" [options]="fromYears" [(ngModel)]="selectedFromYear"
+                                [appendTo]="fromQrterEle"
+                                [placeholder]="'From Year'"
+                                (onChange)="onFromYearChange($event)"></p-dropdown>
+                </div>
+            </ng-template>
+            <ng-template pTemplate="selectedItem">
+                <div *ngIf="selectedFromQuarter && selectedFromYear; else elseTempl">
+                    <div>{{selectedFromYear}} - Q{{selectedFromQuarter.id}}</div>
+                </div>
+                <ng-template #elseTempl>
+                    Select year and quarter
                 </ng-template>
-                <ng-template pTemplate="selectedItem">
-                    <div *ngIf="selectedFromQuarter && selectedFromYear; else elseTempl">
-                        <div>{{selectedFromYear}} - Q{{selectedFromQuarter.id}}</div>
-                    </div>
-                    <ng-template #elseTempl>
-                        Select year and quarter
-                    </ng-template>
+            </ng-template>
+        </p-dropdown>
+    </div>
+    <div class="field col" *ngIf="selectionMode === 'range'">
+        <label for="to_quarter" class="to-qrtr-lbl">To</label>
+        <p-dropdown #toQrterEle
+                    id="to_quarter"
+                    class="rspq-outer-dropdown"
+                    [options]="toQtrs" [(ngModel)]="selectedToQuarter"
+                    optionLabel="label"
+                    (onChange)="onToQuarterChange($event)"
+                    [disabled]="!(selectedFromYear || selectedFromQuarter)">
+            <ng-template pTemplate="header">
+                <div class="flex justify-content-center">
+                    <p-dropdown class="year-dropdown-cont" [options]="toYears" [(ngModel)]="selectedToYear"
+                                [appendTo]="toQrterEle"
+                                [placeholder]="'To Year'"
+                                (onChange)="onToYearChange($event)"></p-dropdown>
+                </div>
+            </ng-template>
+            <ng-template pTemplate="selectedItem">
+                <div *ngIf="selectedToQuarter && selectedToYear; else elseTempl">
+                    <div>{{selectedToYear}} - Q{{selectedToQuarter.id}}</div>
+                </div>
+                <ng-template #elseTempl>
+                    Select year and quarter
                 </ng-template>
-            </p-dropdown>
-        </div>
-        <div class="field col" *ngIf="selectionMode === 'range'">
-            <label>To</label>
-            <p-dropdown #toQrterEle
-                        [options]="toQtrs" [(ngModel)]="selectedToQuarter"
-                        optionLabel="label"
-                        (onChange)="onToQuarterChange($event)"
-                        [disabled]="!(selectedFromYear || selectedFromQuarter)">
-                <ng-template pTemplate="header">
-                    <div class="flex justify-content-center">
-                        <p-dropdown class="year-dropdown-cont" [options]="toYears" [(ngModel)]="selectedToYear"
-                                    [appendTo]="toQrterEle"
-                                    [placeholder]="'To Year'"
-                                    (onChange)="onToYearChange($event)"></p-dropdown>
-                    </div>
-                </ng-template>
-                <ng-template pTemplate="selectedItem">
-                    <div *ngIf="selectedToQuarter && selectedToYear; else elseTempl">
-                        <div>{{selectedToYear}} - Q{{selectedToQuarter.id}}</div>
-                    </div>
-                    <ng-template #elseTempl>
-                        Select year and quarter
-                    </ng-template>
-                </ng-template>
-            </p-dropdown>                    
-        </div>
+            </ng-template>
+        </p-dropdown>
     </div>
 </div>

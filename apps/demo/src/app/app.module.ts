@@ -1,13 +1,24 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { ButtonModule } from 'primeng/button';
+
+import { PrimengQuarterPickerModule } from '@rs-ng-lib/primeng-quarter-picker';
 
 import { AppComponent } from './app.component';
 
-import { PrimengNextModule } from '@rs-ng-lib/primeng-next';
-
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, PrimengNextModule],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
+    ButtonModule,
+    PrimengQuarterPickerModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

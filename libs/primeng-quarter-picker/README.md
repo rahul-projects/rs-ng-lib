@@ -4,7 +4,7 @@ A  quarter picker form control for PrimeNG.
 It can be used in an Angular form for supplying range of quarters or quarter.
 
 # Requisite
-- Angular 12
+- Angular 12 (including @angular/cdk)
 - PrimeNG 12
 - PrimeFlex 3
 - Moment
