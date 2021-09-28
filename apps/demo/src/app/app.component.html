@@ -1,1 +1,16 @@
-<rsng-primeng-quarter-picker></rsng-primeng-quarter-picker>
+<form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+    <div class="card">
+        <div class="field col">
+            <label for="quarter">Quarter</label>
+            <rsng-primeng-quarter-picker id="quarter" formControlName="quarter" class="w-full"></rsng-primeng-quarter-picker>
+        </div>
+        <div class="field col">
+            <label for="lastname2">Lastname</label>
+            <input id="lastname2" type="text" class="inputfield w-full">
+        </div>
+    </div>
+    <button type="submit" pButton [label]="'Save'"></button>
+</form>
+<div>
+    <pre>{{myForm.value | json }}</pre>
+</div>

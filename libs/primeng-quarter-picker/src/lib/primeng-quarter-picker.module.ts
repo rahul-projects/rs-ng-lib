@@ -14,8 +14,11 @@ import { FormsModule } from '@angular/forms';
   ],
   declarations: [
     PrimengQuarterPickerComponent
-  ] 
+  ],
+  exports: [PrimengQuarterPickerComponent]
 })
 export class PrimengQuarterPickerModule {
 
 }
+
+export * from './primeng-quarter-picker/primeng-quarter-picker.component';

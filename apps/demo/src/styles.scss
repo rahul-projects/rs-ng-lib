@@ -1,1 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
+
+@import "primeng/resources/primeng.min.css";
+@import "primeflex/primeflex.css";
+@import "primeng/resources/themes/saga-blue/theme.css";
+// @import "primeflex/themes/saga-blue.css";
+@import "primeicons/primeicons.css";
+
+rsng-primeng-quarter-picker {
+    .rspq-outer-dropdown, .p-dropdown {
+        width: 100%;
+    }
+
+    .from-qrtr-lbl {
+        margin-right: 1em;
+        width: 50%;
+    }
+
+    .to-qrtr-lbl {
+        margin-right: 1em;
+        width: 50%;
+    }
+}
