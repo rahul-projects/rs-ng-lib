@@ -15,7 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@rs-ng-lib/primeng-next": ["libs/primeng-next/src/index.ts"]
+      "@rs-ng-lib/primeng-next": ["libs/primeng-next/src/index.ts"],
+      "@rs-ng-lib/primeng-quarter-picker": [
+        "libs/primeng-quarter-picker/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

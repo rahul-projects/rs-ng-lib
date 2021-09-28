@@ -186,6 +186,46 @@
           }
         }
       }
+    },
+    "primeng-quarter-picker": {
+      "projectType": "library",
+      "root": "libs/primeng-quarter-picker",
+      "sourceRoot": "libs/primeng-quarter-picker/src",
+      "prefix": "rsng",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "project": "libs/primeng-quarter-picker/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/primeng-quarter-picker/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/primeng-quarter-picker/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/primeng-quarter-picker"],
+          "options": {
+            "jestConfig": "libs/primeng-quarter-picker/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/primeng-quarter-picker/src/**/*.ts",
+              "libs/primeng-quarter-picker/src/**/*.html"
+            ]
+          }
+        }
+      }
     }
   }
 }

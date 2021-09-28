@@ -25,11 +25,14 @@
     "update": "nx migrate latest",
     "workspace-generator": "nx workspace-generator",
     "dep-graph": "nx dep-graph",
-    "help": "nx help"
+    "help": "nx help",
+    "primeng-next:build": "nx run primeng-next:build --prod",
+    "primeng-quarter-picker:build": "nx run primeng-quarter-picker:build --prod"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "12.0.0",
+    "@angular/cdk": "12.0.5",
     "@angular/common": "12.0.0",
     "@angular/compiler": "12.0.0",
     "@angular/core": "12.0.0",
@@ -40,7 +43,11 @@
     "@nrwl/angular": "12.3.5",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
-    "zone.js": "~0.11.4"
+    "zone.js": "~0.11.4",
+    "primeflex": "3.0.1",
+    "primeicons": "4.1.0",
+    "primeng": "12.1.0",
+    "moment": "2.23.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "12.0.0",

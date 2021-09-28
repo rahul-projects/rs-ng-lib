@@ -28,6 +28,9 @@
     },
     "primeng-next": {
       "tags": []
+    },
+    "primeng-quarter-picker": {
+      "tags": []
     }
   }
 }
