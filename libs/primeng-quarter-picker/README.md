@@ -1,7 +1,15 @@
-# primeng-quarter-picker
+# PrimeNG Quarter Picker
 
-This library was generated with [Nx](https://nx.dev).
+A  quarter picker form control.
+It can be used in an Angular form for supplying range of quarters or quarter.
 
-## Running unit tests
+## Input properties
+## minDate
+    Date limit for the quarters displayed under 'From' when selection mode is 'range'
 
-Run `nx test primeng-quarter-picker` to execute the unit tests.
+## maxDate
+    Date limit for the quarters displayed under 'To' when selection mode is 'range'
+
+## selectionMode
+    single|multiple|range
+
